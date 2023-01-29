@@ -10,7 +10,7 @@ const EventCards = (props) => {
                 <img src={logo} alt="cat" height={100} width={100} style={{float: 'left'}} />
                 <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
                 {/* Button trigger modal */}
-                <a href="#" className="btn btn-primary ms-4" data-bs-toggle="modal" data-bs-target="#exampleModal1">Details</a>
+                <button className="btn btn-primary ms-4" data-bs-toggle="modal" data-bs-target="#exampleModal1">Details</button>
                 {/* Modal */}
                 <div className="modal fade" id="exampleModal1" tabIndex={-1} aria-labelledby="exampleModalLabel" aria-hidden="true">
                   <div className="modal-dialog modal-dialog-centered ">

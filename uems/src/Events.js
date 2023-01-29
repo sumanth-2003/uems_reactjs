@@ -1,5 +1,4 @@
 import React from 'react'
-import logo from './images/cat_queen.jpg'
 import Footer from './Footer'
 import Headers from './Header'
 import EventCards from './EventCards'

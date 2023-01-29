@@ -18,14 +18,25 @@ const footer = () => {
                 </div>
                 <div className="col-md-4" id="footer-col2">
                   <h3>Contact Us</h3>
-                  <p>Call Us- 1800-121-6532</p>
-                  <p>Email Us- support@xyz.com</p>
+                  <p>Call Us- 000-0000-000</p>
+                  <p>Email Us- nakirikantisumanth@gmail.com</p>
                 </div>
-                <ul className="nav col-md-4">
-                  <li className="px-1" /><a target="_blank" rel="noreferrer" href="#"><i className="fab fa-2x  fa-linkedin" /></a>&nbsp;
-                  <li> <a target="_blank" rel="noreferrer" href="#"><i className="fab fa-2x fa-github" /></a></li>&nbsp;
-                  <li><a target="_blank" rel="noreferrer" href="#"><i className="fab fa-2x fa-instagram" /></a></li>            
+
+                <div className="col-md-4 justify-content-center d-flex align-items-center" id="footer-col3">
+                <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/feed/"><i className="fab fa-2x  fa-linkedin me-2" /></a>&nbsp;
+  <a target="_blank" rel="noreferrer" href="https://github.com/"><i className="fab fa-2x fa-github me-2" /></a>&nbsp;
+<a target="_blank" rel="noreferrer" href="/"><i className="fab fa-2x fa-instagram" /></a>   
+                </div>
+
+
+
+                {/* <div className="col-md-4" id="footer-col3">
+                <ul className="nav col-md-2">
+<a target="_blank" rel="noreferrer" href="https://www.linkedin.com/feed/"><i className="fab fa-2x  fa-linkedin me-2" /></a>&nbsp;
+  <a target="_blank" rel="noreferrer" href="https://github.com/"><i className="fab fa-2x fa-github me-2" /></a>&nbsp;
+<a target="_blank" rel="noreferrer" href="/"><i className="fab fa-2x fa-instagram" /></a>          
                 </ul>
+                </div> */}
               </div>
             </div>
           </section>
