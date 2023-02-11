@@ -6,7 +6,7 @@ import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 const Schedule_event = () => {
   const navigate=useNavigate();
-  const [Data,setData]=useState({name:"",type:"",description:"",date:"",time:"",venue:"",eattendes:"",item1:0,item2:0,item3:0})
+  const [Data,setData]=useState({name:"",type:"",description:"",date:"",time:"",venue:"",eattendes:"",item1:0,item2:0,item3:0,permission:"null"})
   const [step, setStep] = useState(1)
   const changeHandler=(e)=>{
     setData((prev)=>{
@@ -16,7 +16,7 @@ const Schedule_event = () => {
   const submitHandler=(e)=>{
     e.preventDefault();
     // console.log(Data);
-    axios.post('/schedule',Data).then(async (res)=>{
+    axios.post('/api/schedule',Data).then(async (res)=>{
     console.log(Data);
     await alert("request send sucessfully!!")
       navigate('/');
@@ -25,7 +25,6 @@ const Schedule_event = () => {
   return (
     <div>
              <div>
-<Headers/>
         <div className="container">
           <ul className="nav nav-tabs" id="myTab" role="tablist">
             <li className="nav-item" role="presentation">

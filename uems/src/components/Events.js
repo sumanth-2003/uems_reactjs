@@ -1,12 +1,26 @@
 import React from 'react'
 import Footer from './Footer'
-import Headers from './Header'
 import EventCards from './EventCards'
-const events = () => {
+import axios from 'axios'
+import { useState } from 'react'
+import { useEffect } from 'react'
+const Events = () => {
+  const [Data,setData] =useState([])
+  useEffect( () =>{
+ const fetchdata=async ()=>{
+    let res=await axios.get('/api/schedule');
+    let  resdata=await res.data;
+
+// console.log(resdata)
+setData(resdata)
+// console.log(Data)
+ 
+}
+fetchdata();
+}, []);
   return (
 <div>
 <div>
-<Headers/>
         <div className="container">
           <ul className="nav nav-tabs" id="myTab" role="tablist">
             <li className="nav-item" role="presentation">
@@ -20,19 +34,23 @@ const events = () => {
             </li>
           </ul>
           <div className="collapse show" id="ex1">
-          <EventCards num="1"/>
-          <EventCards num="2"/>
-          <EventCards num="3"/>        
+          {
+            Data.map((e,i)=>{
+           if(e.permission==="Accept"){   
+            return(<EventCards jo={e} key={i}/>)
+          }
+            })
+        }
           </div>
           <div className="collapse" id="ex2">
-          <EventCards num="4"/>
+          {/* <EventCards num="4"/>
           <EventCards num="5"/>
-          <EventCards num="6"/>  
+          <EventCards num="6"/>   */}
           </div>
           <div className="collapse" id="ex3">
-          <EventCards num="7"/>
+          {/* <EventCards num="7"/>
           <EventCards num="8"/>
-          <EventCards num="9"/> 
+          <EventCards num="9"/>  */}
           </div>
         </div>
 <Footer/>
@@ -41,4 +59,4 @@ const events = () => {
   )
 }
 
-export default events
+export default Events

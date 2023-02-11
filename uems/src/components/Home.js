@@ -5,7 +5,6 @@ const Home = () => {
   return (
     <div>
             <div>
-<Headers/>
         <div className="container">
           <div id="carouselExampleCaptions" className="carousel slide" data-bs-ride="false">
             <div className="carousel-indicators">

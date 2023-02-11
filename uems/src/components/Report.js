@@ -5,7 +5,6 @@ const report = () => {
   return (
     <div>
          <div>
-<Headers/>
         <div className="container">
           <h4 className="my-4">Filter Reports</h4>
           <div>

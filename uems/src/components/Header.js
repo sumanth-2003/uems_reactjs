@@ -1,6 +1,8 @@
-import React from 'react'
+import React from 'react';
 import {NavLink} from 'react-router-dom'
-const header = () => {
+import { useEffect } from 'react';
+const Header = ({test, setTest}) => {
+
   return (
     <div>
         <section className="row1 bg-lg mb-2"
@@ -22,27 +24,22 @@ const header = () => {
                   <NavLink exact to="/events" style={({ isActive }) => ({ 
                             color: isActive ? 'blue' : 'black' })} className="btn btn-light">Events</NavLink>
                   </li>
-                  <li className="nav-item me-5">
+                 { (test===1||test===2) && <li className="nav-item me-5">
                   <NavLink exact to="/schedule_event" style={({ isActive }) => ({ 
                             color: isActive ? 'blue' : 'black' })} className="btn btn-light">Shedule Event</NavLink>
-                  </li>
-                  <li className="nav-item me-5">
+                  </li>}
+                 { test===2 && <li className="nav-item me-5">
                   <NavLink exact to="/approvals" style={({ isActive }) => ({ 
                             color: isActive ? 'blue' : 'black' })} className="btn btn-light">approvals</NavLink>
-                  </li>
-                  <li className="nav-item me-5">
+                  </li>}
+                { test===2 && <li className="nav-item me-5">
                   <NavLink exact to="/report" style={({ isActive }) => ({ 
                             color: isActive ? 'blue' : 'black' })} className="btn btn-light">Report</NavLink>
-                  </li>
+                  </li> }
                   <li className="nav-item me-5">
                   <NavLink exact to="/login" style={({ isActive }) => ({ 
                             color: isActive ? 'blue' : 'black' })} className="btn btn-light" >Login</NavLink>
                   </li>
-                {/* {
-                  props.list.map((e,i)=>{
-                      return <Navlink key={i} to={e.to} >{e.name}</Navlink> 
-                  })
-                } */}
                 </ul>
               </div>
             </div>
@@ -52,4 +49,4 @@ const header = () => {
   )
 }
 
-export default header
+export default Header

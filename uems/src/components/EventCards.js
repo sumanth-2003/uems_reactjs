@@ -5,7 +5,7 @@ const EventCards = (props) => {
 
 <div className="card">
               <div className="card-body">
-                <h5 className="card-title">Event-{props.num}</h5>
+                <h5 className="card-title">Event-{props.jo.name}</h5>
                 <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
                 {/* Button trigger modal */}
                 <button className="btn btn-primary ms-4" data-bs-toggle="modal" data-bs-target="#exampleModal1">Details</button>
@@ -18,7 +18,11 @@ const EventCards = (props) => {
                         <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close" />
                       </div>
                       <div className="modal-body">
-                        this is the body of the modal
+                        
+                        <p>{props.jo.type}</p>
+                        <p>{props.jo.time}</p>
+                        <p>{props.jo.venue}</p>
+                        <p>{props.jo.eattendes}</p>
                       </div>
                     </div>
                   </div>

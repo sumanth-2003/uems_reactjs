@@ -4,26 +4,26 @@ import Headers from './Header'
 import EventCards from './EventCards'
 import ApprovalCard from './ApprovalCard'
 import axios from 'axios'
+import { Navigate } from 'react-router-dom'
 import { useEffect } from 'react'
 import { useState } from 'react'
 const Approvals = () => {
-
-  const [Data,setData] =useState([])
-  useEffect(async () =>{
-
-    let res=await axios.get('/schedule');
-    let  resdata=await res.data;
-
-console.log(resdata)
-setData(resdata)
-// console.log(Data)
- 
-    }, []);
-    // console.log(Data)
+  const [Data,setData] =useState([""])
+  useEffect( () =>{
+    const fetchdata=async ()=>{
+      let res=await axios.get('/api/schedule');
+      let  resdata=await res.data;
+      
+      // console.log(resdata)
+      setData(resdata)
+      // console.log(Data)
+      
+    }
+    fetchdata();
+  }, []);
   return (
     <div>
          <div>
-<Headers/>
         <div className="container">
           <ul className="nav nav-tabs" id="myTab" role="tablist">
             <li className="nav-item" role="presentation">
@@ -40,10 +40,9 @@ setData(resdata)
           <div className="collapse show active" id="ex1">
         {
             Data.map((e,i)=>{
-              return(
+          if(e.permission==="null"){    return(
                 <ApprovalCard jo={e} key={i}/>
-              )
-// console.log(e,i)
+                 )}
             })
         }
             {/* <div className="card">
@@ -72,14 +71,22 @@ setData(resdata)
             </div>         */}
           </div>
           <div className="collapse" id="ex2">
-          <EventCards num="4"/>
-          <EventCards num="5"/>
-          <EventCards num="6"/> 
+          {
+            Data.map((e,i)=>{
+          if(e.permission==="Accept"){    return(
+                <ApprovalCard jo={e} key={i}/>
+                 )}
+            })
+        }
           </div>
           <div className="collapse" id="ex3">
-          <EventCards num="7"/>
-          <EventCards num="8"/>
-          <EventCards num="9"/> 
+          {
+            Data.map((e,i)=>{
+          if(e.permission==="Decline"){    return(
+                <ApprovalCard jo={e} key={i}/>
+                 )}
+            })
+        }
           </div>
         </div>
 <Footer/>
